@@ -6,7 +6,7 @@
 */
 class Envato{
   /**
-   * Confugration
+   * Configration
    * @var array
    */
   public $config = array(

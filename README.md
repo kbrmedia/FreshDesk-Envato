@@ -1,4 +1,4 @@
-Envato Purchase Code Verifier for Freshdesk
+FreshDesk-Envato
 ================
 
 Verify Envato purchase codes via FreshDesk

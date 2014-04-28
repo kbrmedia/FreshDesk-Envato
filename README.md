@@ -50,11 +50,11 @@ You have the option to use two different reponse types.
 
 **Simple**
 
-(http://gempixel.com/i/simple.jpg)
+![](http://gempixel.com/i/simple.jpeg)
 
 **Advanced**
 
-(http://gempixel.com/i/advanced.jpg)
+![](http://gempixel.com/i/advanced.jpeg)
 
 License
 ----

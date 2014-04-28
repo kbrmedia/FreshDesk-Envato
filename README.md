@@ -22,7 +22,7 @@ public $config = array(
     ); 
 ```
 3. Create a custom ticket field on Freshdesk and name it "Purchase Code"
-4. Create a custom "FreshPlug" using the code below
+4. Create a custom "FreshPlug" using the code below (make sure to change YOURSITE)
 
 FreshPlug Code
 --------------

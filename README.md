@@ -1,7 +1,7 @@
 FreshDesk-Envato
 ================
 
-Verify Envato purchase codes via FreshDesk
+Verify Envato purchase codes via FreshDesk using FreshPlug. Setting this up is very easy. All you have to do is to follow the instruction below and that is it.
 
 Version
 ----
@@ -10,7 +10,7 @@ Version
 
 Installation
 -----------
-1. Upload verify.php to your server
+1. Download and Upload verify.php to your own server
 2. Open verify.php and configure it 
 
 ```sh
@@ -46,7 +46,7 @@ FreshPlug Code
 Response Type
 --------------
 
-You have the option to use two different reponse types. 
+You have the option to use two different response types. 
 
 **Simple**
 
@@ -59,4 +59,4 @@ You have the option to use two different reponse types.
 License
 ----
 
-MIT
+MIT (i.e. do whatever you want ;))

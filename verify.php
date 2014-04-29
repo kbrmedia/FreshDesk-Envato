@@ -27,7 +27,7 @@ class Envato{
     // Is set code
     if(!isset($_GET["code"]) || empty($_GET["code"])) return $this->response();
     // Clean Code
-    $code = strip_tags(htmlentities($_GET["code"]));
+    $code = htmlentities(strip_tags($_GET["code"]));
     // Format URL
     $this->api_url = $this->api_url."/{$this->config["username"]}/{$this->config["key"]}/verify-purchase:{$code}.json";
     $response = $this->http(TRUE);

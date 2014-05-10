@@ -75,7 +75,7 @@ class Envato{
       header('HTTP/1.1 400 Bad Request', true, 400);
       $this->e(array("type"=>"text", "text"=>"Customer Not Verified"));
     }
-    if(isset($content->{'verify-purchase'})){
+    if(isset($content->{'verify-purchase'}) && isset($content->{'verify-purchase'}->created_at)){
       if($this->config["response"] == "advanced"){
         $t = $content->{'verify-purchase'}; 
         $t->date = date("d F, Y", strtotime($t->created_at));

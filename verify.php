@@ -82,7 +82,7 @@ class Envato{
         $t->date .= " at ".date("H:i", strtotime($t->created_at));
 
         $html = "<div id='envato_purchase_verify' style='font-size:13px;background:#000;color: #fff;border-radius:2px;padding: 5px;margin-top:5px;'>";
-          $html .= "<strong style='padding:0;;'><a href='http://themeforest.com/user/{{$t->buyer}}' style='color:#fff' target='_blank'>{$t->buyer}</a></strong> <small>(Verfied Buyer)</small>";
+          $html .= "<strong style='padding:0;;'><a href='http://themeforest.com/user/{$t->buyer}' style='color:#fff' target='_blank'>{$t->buyer}</a></strong> <small>(Verfied Buyer)</small>";
           $html .= "<p style='padding:0;margin:0;margin-top:5px; font-size:12px'>Purchased a <strong>{$t->licence}</strong> of <strong>{$t->item_name}</strong> on {$t->date}</p>";
         $html .= "</div>";
         $this->e(array("type"=>"html","html"=>$html));

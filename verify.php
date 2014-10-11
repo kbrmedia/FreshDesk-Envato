@@ -49,6 +49,7 @@ class Envato{
 
       curl_setopt($curl, CURLOPT_URL, $this->api_url);
       curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+      curl_setopt($curl, CURLOPT_USERAGENT,'Envato-Freshdesk Purchase code verifier.');
       // curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
       $response = curl_exec($curl);

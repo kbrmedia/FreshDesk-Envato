@@ -6,14 +6,15 @@
 */
 class Envato{
   /**
-   * Configuration
+   * Configration
    * @var array
    */
   public $config = array(
-      "key" => "", // Envato API Key
-      "username" => "", // Envato Username
-      "http" => "curl", // HTTP Request method: "curl" for cURL or empty for file_get_contents
-      "response" => "advanced" // Response method: "simple" will return "Verifed or not verified while "advanced" will return more info
+      "key" => "9nz5016dz4dtmtotqlpj8c6ac5z3hc6k",
+      "username" => "kbrmedia",
+      "http" => "curl",
+      "response" => "advanced",
+      "theme" => "black" // black, white, green
     );  
   /**
    * Envato API URL
@@ -27,7 +28,7 @@ class Envato{
     // Is set code
     if(!isset($_GET["code"]) || empty($_GET["code"])) return $this->response();
     // Clean Code
-    $code = htmlentities(strip_tags($_GET["code"]));
+    $code = strip_tags(htmlentities($_GET["code"]));
     // Format URL
     $this->api_url = $this->api_url."/{$this->config["username"]}/{$this->config["key"]}/verify-purchase:{$code}.json";
     $response = $this->http(TRUE);
@@ -82,10 +83,7 @@ class Envato{
         $t->date = date("d F, Y", strtotime($t->created_at));
         $t->date .= " at ".date("H:i", strtotime($t->created_at));
 
-        $html = "<div id='envato_purchase_verify' style='font-size:13px;background:#000;color: #fff;border-radius:2px;padding: 5px;margin-top:5px;'>";
-          $html .= "<strong style='padding:0;;'><a href='http://themeforest.com/user/{$t->buyer}' style='color:#fff' target='_blank'>{$t->buyer}</a></strong> <small>(Verfied Buyer)</small>";
-          $html .= "<p style='padding:0;margin:0;margin-top:5px; font-size:12px'>Purchased a <strong>{$t->licence}</strong> of <strong>{$t->item_name}</strong> on {$t->date}</p>";
-        $html .= "</div>";
+        $html = $this->theme($t);
         $this->e(array("type"=>"html","html"=>$html));
       }else{
         $this->e(array("type"=>"text", "text"=>"Verified Customer"));
@@ -99,10 +97,48 @@ class Envato{
    * @param  mixed $content Content to echo
    */
   private function e($content){
+    echo $content["html"];
+    exit;
     header("content-type: application/javascript");
     echo ($_GET["callback"]."(".json_encode($content).")");
     exit;
   }
+  /**
+   * Theme
+   * @author KBRmedia
+   * @since  1.0
+   */
+  private function theme($t){
+    $fn = "theme_{$this->config["theme"]}";
+    if(method_exists("Envato", $fn)) return $this->$fn($t);
+    return $this->theme_black($t);
+  }
+    /**
+     * Default Theme
+     * @author KBRmedia
+     * @since  1.0
+     */
+    private function theme_black($t){
+        $html = "<div id='envato_purchase_verify' style='font-size:13px;background:#000;color: #fff;border-radius:2px;padding: 5px;margin-top:5px;'>";
+          $html .= "<strong style='padding:0;;'>{$t->buyer}</strong> <small>(Verfied Buyer)</small>";
+          $html .= "<p style='padding:0;margin:0;margin-top:5px; font-size:12px'>Purchased a <strong>{$t->licence}</strong> of <strong>{$t->item_name}</strong> on {$t->date}</p>";
+        $html .= "</div>";      
+      return $html;
+    }
+    private function theme_white($t){
+        $html = "<div id='envato_purchase_verify' style='font-size:13px;background:#fff;color: #27aae1;border-radius:2px;padding: 5px;margin-top:5px;border: 2px solid #27aae1'>";
+          $html .= "<strong style='padding:0;;'>{$t->buyer}</strong> <small>(Verfied Buyer)</small>";
+          $html .= "<p style='padding:0;margin:0;margin-top:5px; font-size:12px'>Purchased a <strong>{$t->licence}</strong> of <strong>{$t->item_name}</strong> on {$t->date}</p>";
+        $html .= "</div>";      
+      return $html;
+    }
+    private function theme_green($t){
+        $html = "<div id='envato_purchase_verify' style='font-size:13px;background:#fff;color: #71E126;border-radius:2px;padding: 5px;margin-top:5px;border: 2px solid #71E126'>";
+          $html .= "<strong style='padding:0;;'>{$t->buyer}</strong> <small>(Verfied Buyer)</small>";
+          $html .= "<p style='padding:0;margin:0;margin-top:5px; font-size:12px'>Purchased a <strong>{$t->licence}</strong> of <strong>{$t->item_name}</strong> on {$t->date}</p>";
+        $html .= "</div>";      
+      return $html;
+    }           
 }
   /**
    * Instantiate Class

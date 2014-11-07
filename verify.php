@@ -14,7 +14,7 @@ class Envato{
       "username" => "kbrmedia",
       "http" => "curl",
       "response" => "advanced",
-      "theme" => "black" // black, white, green
+      "theme" => "black"
     );  
   /**
    * Envato API URL
@@ -97,8 +97,6 @@ class Envato{
    * @param  mixed $content Content to echo
    */
   private function e($content){
-    echo $content["html"];
-    exit;
     header("content-type: application/javascript");
     echo ($_GET["callback"]."(".json_encode($content).")");
     exit;

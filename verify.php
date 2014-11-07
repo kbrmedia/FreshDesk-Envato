@@ -117,26 +117,33 @@ class Envato{
      * @since  1.0
      */
     private function theme_black($t){
-        $html = "<div id='envato_purchase_verify' style='font-size:13px;background:#000;color: #fff;border-radius:2px;padding: 5px;margin-top:5px;'>";
+        $html = "<div id='envato_purchase_verify' style='font-size:13px;background:#000;color: #fff;border-radius:2px;padding: 5px;margin-top:10px;'>";
           $html .= "<strong style='padding:0;;'>{$t->buyer}</strong> <small>(Verfied Buyer)</small>";
           $html .= "<p style='padding:0;margin:0;margin-top:5px; font-size:12px'>Purchased a <strong>{$t->licence}</strong> of <strong>{$t->item_name}</strong> on {$t->date}</p>";
         $html .= "</div>";      
       return $html;
     }
     private function theme_white($t){
-        $html = "<div id='envato_purchase_verify' style='font-size:13px;background:#fff;color: #27aae1;border-radius:2px;padding: 5px;margin-top:5px;border: 2px solid #27aae1'>";
+        $html = "<div id='envato_purchase_verify' style='font-size:13px;background:#fff;color: #000;border-radius:2px;padding: 5px;margin-top:10px;border: 2px solid #27aae1'>";
           $html .= "<strong style='padding:0;;'>{$t->buyer}</strong> <small>(Verfied Buyer)</small>";
           $html .= "<p style='padding:0;margin:0;margin-top:5px; font-size:12px'>Purchased a <strong>{$t->licence}</strong> of <strong>{$t->item_name}</strong> on {$t->date}</p>";
         $html .= "</div>";      
       return $html;
     }
     private function theme_green($t){
-        $html = "<div id='envato_purchase_verify' style='font-size:13px;background:#fff;color: #71E126;border-radius:2px;padding: 5px;margin-top:5px;border: 2px solid #71E126'>";
+        $html = "<div id='envato_purchase_verify' style='font-size:13px;background:#54AD18;color: #fff;border-radius:2px;padding: 5px;margin-top:10px;'>";
           $html .= "<strong style='padding:0;;'>{$t->buyer}</strong> <small>(Verfied Buyer)</small>";
           $html .= "<p style='padding:0;margin:0;margin-top:5px; font-size:12px'>Purchased a <strong>{$t->licence}</strong> of <strong>{$t->item_name}</strong> on {$t->date}</p>";
         $html .= "</div>";      
       return $html;
-    }           
+    }   
+    private function theme_blue($t){
+        $html = "<div id='envato_purchase_verify' style='font-size:13px;background:#27aae1;color: #fff;border-radius:2px;padding: 5px;margin-top:10px;'>";
+          $html .= "<strong style='padding:0;;'>{$t->buyer}</strong> <small>(Verfied Buyer)</small>";
+          $html .= "<p style='padding:0;margin:0;margin-top:5px; font-size:12px'>Purchased a <strong>{$t->licence}</strong> of <strong>{$t->item_name}</strong> on {$t->date}</p>";
+        $html .= "</div>";      
+      return $html;
+    }             
 }
   /**
    * Instantiate Class

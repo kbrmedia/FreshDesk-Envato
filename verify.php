@@ -10,11 +10,11 @@ class Envato{
    * @var array
    */
   public $config = array(
-      "key" => "9nz5016dz4dtmtotqlpj8c6ac5z3hc6k",
-      "username" => "kbrmedia",
-      "http" => "curl",
-      "response" => "advanced",
-      "theme" => "black"
+      "key" => "", // YOUR API KEY
+      "username" => "", // YOUR USERNAME
+      "http" => "curl", // HTTP Method
+      "response" => "advanced", // Response type: simple or advanced
+      "theme" => "black" // Theme: black, white, green, blue
     );  
   /**
    * Envato API URL
@@ -124,7 +124,7 @@ class Envato{
       return $html;
     }
     private function theme_white($t){
-        $html = "<div id='envato_purchase_verify' style='font-size:13px;background:#fff;color: #000;border-radius:2px;padding: 5px;margin-top:10px;border: 2px solid #27aae1'>";
+        $html = "<div id='envato_purchase_verify' style='font-size:13px;background:#fff;color: #000;border-radius:2px;padding: 5px;margin-top:10px;border: 2px solid #000'>";
           $html .= "<strong style='padding:0;;'>{$t->buyer}</strong> <small>(Verfied Buyer)</small>";
           $html .= "<p style='padding:0;margin:0;margin-top:5px; font-size:12px'>Purchased a <strong>{$t->licence}</strong> of <strong>{$t->item_name}</strong> on {$t->date}</p>";
         $html .= "</div>";      

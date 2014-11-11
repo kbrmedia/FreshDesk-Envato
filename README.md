@@ -6,7 +6,7 @@ Verify Envato purchase codes via FreshDesk using FreshPlug. Setting this up is v
 Version
 ----
 
-1.0
+1.1
 
 Installation
 -----------

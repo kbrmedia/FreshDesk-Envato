@@ -18,7 +18,8 @@ public $config = array(
       "key" => "", // Envato API Key
       "username" => "", // Envato Username
       "http" => "curl", // HTTP Request method: "curl" for cURL or empty for file_get_contents
-      "response" => "advanced" // Response method: "simple" will return "Verifed or not verified" while "advanced" will return more info
+      "response" => "advanced", // Response method: "simple" will return "Verifed or not verified" while "advanced" will return more info
+      "theme" => "black" // Choose the theme you want
     ); 
 ```
 3. Create a custom ticket field on Freshdesk and name it "Purchase Code"
